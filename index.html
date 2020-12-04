@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!---Bootstrap CSS file--->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Font Awesome CSS (CDN)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <!--SlickCarousel CSS (CDN)-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <!--Costume CSS style file-->
+    <link rel="stylesheet" href="./CSS/global.css">
+
+    <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+</head>
+
+<body>
+
+    <header class="mt-2">
+        <!--Scroll Bar animation-->
+        <div class="progress-container">
+            <div class="progress-bar" id="sc-bar"></div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!--<a class="navbar-brand" href="#">Navbar w/ text</a>-->
+            <a class="navbar-brand flex-grow-2" href="#"><img src="./images/logo.svg" alt="fylo-logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbar">
+                <ul class="navbar-nav mr-5 mx-xs-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign in</a>
+                    </li>
+                </ul>
+                <!--<span class="navbar-text">
+      Navbar text with an inline element
+    </span>-->
+            </div>
+        </nav>
+    </header>
+    <!--START Hero section-->
+    <section class="container-fluid hero-section">
+        <!--Box model for input E-mail-->
+        <div class="box-modal" id="bx-modal">
+            <div class="cancel-btn" onclick="closeBx()">
+                <svg width="2rem" height="2rem" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </div>
+            <div class="bx-content">
+                <div class="bx-header">
+                    <div class="bx-icon">
+                        <svg width="4rem" height="4rem" viewBox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                        </svg>
+                    </div>
+                    <h2>Congratulation! your e-mail submited successfuly!</h2>
+                </div>
+                <div class="bx-body">
+                    <p>Enjoy!! We recived your e-mail (<span id="userEm"></span>) - get daily updates from us.</p>
+                </div>
+            </div>
+        </div>
+        <!--End Box Model for Input E-mail-->
+        <div class="row mt-5 p-3">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h2>All your files in one secure<br /> location, accessible anywhere.</h2>
+                    <p>Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
+
+                    <!--Hero Subscribe input-->
+                    <div class="subscribe-area mt-3">
+                        <input type="email" class="form-control" placeholder="Enter your e-mail" id="emailIn">
+                        <button type="button" class="btn subscribe-btn" onclick="ValidatEmail()">Get Started</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-img-holder">
+                    <img src="./images/illustration-1.svg" class="img-fluid img-responsive">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END Hero Section-->
+    <!--START STATIC SECTION-->
+    <section class="static-section">
+        <div class="bg-wave">
+            <img src="./images/bg-curve-desktop.svg" class="img-fluid">
+        </div>
+        <div class="row content">
+            <div class="col-lg-6">
+                <div class="static-content">
+                    <h2>Stay productive, wherever you are</h2>
+                    <p>let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs</p>
+                    <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
+                    <a href="#" class="static-section-link">See how Fylo work's <i class="fas fa-arrow-right"></i></a>
+
+                    <!--Testimonial Cards slides-->
+
+                    <div class="testimonials-cards-slider mt-5 mx-auto tilt-anim" data-tilt>
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <div class="quotes-icon">
+                                    <img src="./images/icon-quotes.svg">
+                                </div>
+                                <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+                                <div class="testimonial-profile">
+                                    <div class="avatar-holder">
+                                        <img src="./images/avatar-testimonial.jpg" alt="Avatar-testimonial">
+                                    </div>
+                                    <div class="user-info">
+                                        <strong>Kyle Burten</strong>
+                                        <span>CEO & Founder Huddle</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <div class="quotes-icon">
+                                    <img src="./images/icon-quotes.svg">
+                                </div>
+                                <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+                                <div class="testimonial-profile">
+                                    <div class="avatar-holder">
+                                        <img src="./images/profile-3.jpg" alt="Avatar-testimonial">
+                                    </div>
+                                    <div class="user-info">
+                                        <strong>Delary fulton</strong>
+                                        <span>Cyber-Security - BookMark</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <div class="quotes-icon">
+                                    <img src="./images/icon-quotes.svg">
+                                </div>
+                                <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+                                <div class="testimonial-profile">
+                                    <div class="avatar-holder">
+                                        <img src="./images/profile-2.jpg" alt="Avatar-testimonial">
+                                    </div>
+                                    <div class="user-info">
+                                        <strong>Eliot alderson</strong>
+                                        <span>Server Maintenance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <div class="quotes-icon">
+                                    <img src="./images/icon-quotes.svg">
+                                </div>
+                                <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
+                                <div class="testimonial-profile">
+                                    <div class="avatar-holder">
+                                        <img src="./images/profile-1.jpg" alt="Avatar-testimonial">
+                                    </div>
+                                    <div class="user-info">
+                                        <strong>Selvester dud</strong>
+                                        <span>CTO at AllSafe</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="static-img-holder">
+                    <img src="./images/illustration-2.svg" class="img-fluid img-responsive">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END STATIC SECTION-->
+
+    <!--START SUBSCRIBE SECTION-->
+
+    <section class="container-fluid offer-area">
+        <div class="row offer-row">
+            <div class="col-lg-6">
+                <div class="offer-content mt-5">
+                    <h2>Get early access today</h2>
+                    <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form action="#" class="form-area">
+                    <input type="email" class='form-control' placeholder="Stay up-to-date" required>
+                    <button type="button" class="btn subscribe-btn"> Get started for free</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--END SUBSCRIBE SECTION-->
+    <!--START FOOTER SECTION-->
+    <footer class="container-fluid footer-area">
+        <div class="row footer-content w-40">
+            <div class="col-lg-3">
+                <div class="box">
+                    <img src="./images/logo.svg" alt="Logo" class="footer-logo">
+                    <div class="footer-info">
+                        <div class="phone-info d-flex">
+                            <img src="./images/icon-phone.svg" class="img-responsive">
+                            <span class="ml-3">Phone: +212652940991</span>
+                        </div>
+                        <br />
+                        <div class="email-info d-flex">
+                            <img src="./images/icon-email.svg" class="img-responsive">
+                            <span class="ml-3">E-mail: support@fylo.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="box">
+                    <ul>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Jobs</a>
+                        </li>
+                        <li>
+                            <a href="#">Press</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="box">
+                    <ul>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="box sci">
+                    <ul>
+                        <li>
+                            <a href="https://twitter.com/brtouli_mounir" target="_blank"><img src="./images/icon-facebook.svg"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/rida.momo.3367/" target='_blank'><img src="./images/icon-twitter.svg"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/mounirbr24/" target='_blank'><img src="./images/icon-instagram.svg"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--END FOOTER SECTION-->
+
+
+    <!--
+    See how Fylo works Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine. Kyle Burton Founder & CEO, Huddle Get early access today It only takes a
+    minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you. Get Started For Free Phone: +1-543-123-4567 example@fylo.com About Us Jobs Press Blog Contact Us Terms Privacy-->
+
+    <!------Bootstrap Js (CDN) - jQuery / Popper------->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--Slick Carousel JS (CDN)-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!---Tilt.js Animation JS (CDN)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
+
+    <!--Tidio Chat bot JS (CDN)-->
+    <script src="//code.tidio.co/7izqqk1ldl6gkqo0u3iz3ou4lbxooylz.js" async></script>
+
+    <!--Own JS file-->
+    <script src="./JS/main.js"></script>
+
+</body>
+
+</html>

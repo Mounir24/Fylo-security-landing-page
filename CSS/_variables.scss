@@ -1,0 +1,31 @@
+/*------------Colors / Fonts / Layouts------------*/
+
+
+/*=============Mobile / Tablet / Desktop=========*/
+
+$Mobile: 375px;
+$Desktop: 1440px;
+
+/*=============Colors==========*/
+
+//Primary
+$VeryDarkBlue: hsl(243, 87%, 12%);
+$DesaturatedBlue: hsl(238, 22%, 44%);
+//Accent
+$BrightBlue: hsl(224, 93%, 58%);
+$ModeratCyan: hsl(170, 45%, 43%);
+//Neutral
+$LightGrayishBlue: hsl(240, 75%, 98%);
+$LightGray: hsl(0, 0%, 75%);
+//Box-shadow : effect
+$ShadowEffect: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+0 10px 10px -5px rgba(0, 0, 0, 0.05);
+
+/*============Typography==========*/
+
+$RussOne: 'Russo One',
+sans-serif;
+$Rajdhani: 'Rajdhani',
+sans-serif;
+$RaleWay: 'Raleway',
+sans-serif;

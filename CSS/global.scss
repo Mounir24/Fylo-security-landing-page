@@ -1,0 +1,310 @@
+@import './variables';
+@import '../components/static-section';
+@import '../components/subscribe-section';
+@import '../components/footer-section';
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500&family=Raleway:wght@400;700&family=Russo+One&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #FFF;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: $Rajdhani;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+a,
+a:after,
+a:before,
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/*------Set up fonts styles------*/
+
+//Function for Fonts
+@mixin fonts($fontName,
+$fontSize,
+$fontWeight) {
+    font-family: $fontName;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+//Function for Buttons
+@mixin buttons($bg,
+$pad,
+$radius) {
+    padding: $pad;
+    border: none;
+    outline: none;
+    background: $bg;
+    border-radius: $radius;
+    color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+// Displaying content
+%displayed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*===========STYLING HEADER==========*/
+
+header {
+    /*&.sticky {
+        background: $LightGrayishBlue;
+        transition: all 300ms ease-in-out;
+    }*/
+    .progress-container {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        z-index: 100;
+        width: 100vw;
+        height: 8px;
+        background: #CCC;
+        .progress-bar {
+            height: 8px;
+            background: $BrightBlue;
+        }
+    }
+}
+
+header.navbar-brand {
+    /*margin-left: 90px;*/
+    width: 100px !important;
+    max-width: 100px !important;
+    height: 80px;
+    img {
+        max-width: 150px !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+}
+
+
+/*------Navbar-Links-------*/
+
+.navbar-nav>.nav-item {
+    margin-right: 30px;
+    transition: all 300ms ease-in-out;
+    &:after {
+        content: '';
+        width: 0;
+        height: 4px;
+        background: $BrightBlue;
+        display: block;
+        margin: 8px auto;
+        transition: width 300ms ease-in-out;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+
+/*------STYLING HERO SECTION-------*/
+
+.hero-section {
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 40px;
+    /*-------START Box Modal----------*/
+    .box-modal {
+        width: 510px;
+        max-width: 750px;
+        position: fixed;
+        top: -40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $LightGrayishBlue;
+        padding: 40px;
+        z-index: 100;
+        display: none;
+        box-shadow: $ShadowEffect;
+        .cancel-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: hsl(0, 0%, 90%);
+            cursor: pointer;
+            border-radius: 100%;
+            @extend %displayed;
+            svg {
+                color: $VeryDarkBlue;
+                transition: all 500ms ease-in-out;
+                &:hover {
+                    transform: scale(0.9) rotate(360deg);
+                }
+            }
+        }
+        .bx-content {
+            padding: 10px;
+            .bx-header {
+                margin-bottom: 30px;
+                text-align: center;
+                h2 {
+                    color: $VeryDarkBlue;
+                }
+                .bx-icon {
+                    @extend %displayed;
+                    margin-bottom: 15px;
+                    svg {
+                        color: $ModeratCyan;
+                    }
+                }
+            }
+            /*------Body of box modal-------*/
+            .bx-body {
+                text-align: center;
+                p>span {
+                    color: $BrightBlue;
+                }
+            }
+        }
+    }
+    /*-------ENd Box Modal----------*/
+    .hero-content {
+        margin-top: 15%;
+        max-width: 550px;
+        h2 {
+            font-family: $RussOne;
+            font-size: 27px;
+            font-weight: 700;
+            color: $VeryDarkBlue;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 50px;
+            text-align: center;
+        }
+        p {
+            @include fonts($Rajdhani,
+            17px,
+            500);
+            text-transform: uppercase;
+            color: $LightGray;
+            text-align: center;
+        }
+        .subscribe-area {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 600px;
+            /*margin-left: 30px;*/
+            margin: 0 auto;
+            input[type='email'] {
+                padding: 10px;
+                width: 300px;
+                border: none;
+                outline: none;
+                margin-right: 15px;
+                text-align: center;
+                /*background: transparent;*/
+                color: $VeryDarkBlue;
+                border-radius: 5px;
+                border: 2px solid $DesaturatedBlue;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .subscribe-btn {
+                padding: 13px 50px;
+                border: none;
+                outline: none;
+                background: $BrightBlue;
+                color: #FFF;
+                border-radius: 5px;
+                box-shadow: $ShadowEffect;
+                transition: all 300ms ease-in-out;
+                @include fonts($RussOne,
+                13px,
+                500);
+                text-transform: uppercase;
+                &:hover {
+                    transform: scale(0.9);
+                    border-color: $BrightBlue;
+                    background: $LightGrayishBlue;
+                    color: $BrightBlue;
+                }
+            }
+        }
+    }
+}
+
+
+/*--------VeiwPort of Mobile -> 360px--------*/
+
+@media only screen and (max-width: 360px),
+(max-width: 375px) {
+    .hero-section>.box-modal {
+        width: 315px;
+    }
+    .subscribe-area {
+        width: 100% !important;
+        margin-top: 20px;
+        input[type='email'] {
+            width: 100%;
+        }
+        .subscribe-btn {
+            margin-top: 20px;
+        }
+    }
+    .hero-img-holder {
+        margin: 0;
+    }
+}
+
+
+/*--------VeiwPort of Tablet -> 768px--------*/
+
+@media only screen and (max-width: 768px) {
+    .hero-content {
+        margin: auto;
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .hero-img-holder {
+        margin: 30px;
+        margin-top: 40px;
+    }
+}
+
+
+/*--------VeiwPort of Tablet -> 800px--------*/
+
+@media only screen and(max-width: 800px) {
+    .hero-content {
+        margin: auto;
+        h2 {
+            font-size: 31px;
+        }
+    }
+    .hero-img-holder {
+        /*margin: 30px;*/
+        transform: scale(0.8);
+        margin-top: 45px;
+    }
+}
